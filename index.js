@@ -31,14 +31,13 @@ const loadDrinks = (drinks) => {
   // clear search result when search new data
 
   const searchResult = document.getElementById("search-result");
-document.getElementById("search-result").textContent = ""
+    document.getElementById("search-result").textContent = ""
   if ( drinks == null) {
     console.log("error");
     const errorMessage = document.getElementById("error-message");
     errorMessage.classList.remove("d-none");
   } 
   else {
-
     drinks.forEach((drink) => {
       const div = document.createElement("div");
       div.classList.add("col");
@@ -66,6 +65,8 @@ document.getElementById("search-result").textContent = ""
 };
 // single Drink area
 const singleDrinks = (drinks) => {
+    // clear search result 
+    document.getElementById("search-result").textContent = "";
   // spinner added here
   spinner.classList.remove("d-none");
   const url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinks}`;
